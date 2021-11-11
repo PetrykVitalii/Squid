@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter, Switch, Route, Redirect,
+  BrowserRouter, Switch, Route,
 } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
@@ -22,11 +22,14 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow: hidden;
   }
 
   #root {
     background-color: white;
     min-height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
     position: relative;
     z-index: 1;
   }
@@ -42,8 +45,7 @@ const App: React.FC = () => (
   <BrowserRouter>
     <GlobalStyle />
     <Switch>
-      <Route path="/:path" component={Main} />
-      <Redirect to="/home" />
+      <Route path="/" component={Main} />
     </Switch>
   </BrowserRouter>
 );

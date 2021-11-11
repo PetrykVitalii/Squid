@@ -7,10 +7,16 @@ import RoadMapIcon from '@/components/icons/RoadMapIcon';
 
 import Colors from '@/utils/Colors';
 
+export enum IStatusItem {
+  Success = 'success',
+  Process = 'process',
+  Pending = 'pending',
+}
+
 export interface ITdData {
   name: string;
   id: string;
-  isActive: boolean;
+  status: IStatusItem;
 }
 
 export interface ISteps {

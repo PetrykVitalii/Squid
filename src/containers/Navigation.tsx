@@ -6,6 +6,7 @@ import NavigationLink, { ILink } from '@/components/common/NavigationLink';
 import LogoIcon from '@/components/icons/LogoIcon';
 
 import Colors from '@/utils/Colors';
+import useScroll from '@/components/hooks/useScroll';
 
 export enum Path {
   Home = 'home',
@@ -16,14 +17,15 @@ export enum Path {
 
 interface Props {
   links: ILink[];
+  handleClick: () => void;
 }
 
-const Navigation: React.FC<Props> = ({ links }) => {
-  console.log(1);
+const Navigation: React.FC<Props> = ({ links, handleClick }) => {
+  const { scrollTop } = useScroll();
 
   return (
-    <NavigationStyled>
-      <HeaderWrapper>
+    <NavigationStyled isDarker={scrollTop > 50}>
+      <HeaderWrapper onClick={handleClick}>
         <LogoWrap>
           <LogoIcon />
         </LogoWrap>
@@ -65,11 +67,14 @@ const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-right: 20px;
+  cursor: pointer;
 `;
 
-const NavigationStyled = styled.header`
+const NavigationStyled = styled.header<{ isDarker: boolean }>`
   position: fixed;
-  background: rgba(0, 0, 0, 0.35);
+  background: ${({ isDarker }) => `rgba(0, 0, 0,${isDarker ? 0.8 : 0.35})`};
+  transition: 1s;
+  transition-property: 'background';
   left: 0;
   top: 0;
   right: 0;

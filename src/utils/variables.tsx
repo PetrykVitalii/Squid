@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { ICard } from '@/containers/FirstTime';
-import { ISteps } from '@/containers/RoadMap';
+import { IStatusItem, ISteps } from '@/containers/RoadMap';
 
 import FoxIcon from '@/components/icons/FoxIcon';
 
@@ -12,59 +12,59 @@ export const steps: ISteps[] = [
   {
     name: 'Step1',
     id: 'Step1',
-    isActive: false,
+    isActive: true,
     td: [
       {
         name: 'Website launch',
         id: 'Website launch',
-        isActive: false,
+        status: IStatusItem.Success,
       },
       {
         name: 'Launch of all social networks',
         id: 'Launch of all social networks',
-        isActive: false,
+        status: IStatusItem.Success,
       },
       {
         name: 'Start marketing',
         id: 'Start marketing',
-        isActive: false,
+        status: IStatusItem.Success,
       },
       {
         name: 'Community development',
         id: 'Community development',
-        isActive: false,
+        status: IStatusItem.Success,
       },
       {
         name: 'Squid Game gadget contest',
         id: 'Squid Game gadget contest',
-        isActive: false,
+        status: IStatusItem.Success,
       },
     ],
   },
   {
     name: 'Step2',
     id: 'Step2',
-    isActive: false,
+    isActive: true,
     td: [
       {
         name: 'Pre Sale',
         id: 'Pre Sale',
-        isActive: false,
+        status: IStatusItem.Success,
       },
       {
         name: '456 Holders',
         id: '456 Holders',
-        isActive: false,
+        status: IStatusItem.Success,
       },
       {
         name: 'Advanced marketing',
         id: 'Advanced marketing',
-        isActive: false,
+        status: IStatusItem.Success,
       },
       {
         name: 'Distribution of NFT holders awards',
         id: 'Distribution of NFT holders awards',
-        isActive: false,
+        status: IStatusItem.Success,
       },
     ],
   },
@@ -76,27 +76,27 @@ export const steps: ISteps[] = [
       {
         name: '4560 Holders',
         id: '4560 Holders',
-        isActive: false,
+        status: IStatusItem.Process,
       },
       {
         name: 'List on pancakeswap',
         id: 'List on pancakeswap',
-        isActive: false,
+        status: IStatusItem.Process,
       },
       {
         name: 'Push Influencer Marketing',
         id: 'Push Influencer Marketing',
-        isActive: false,
+        status: IStatusItem.Process,
       },
       {
         name: 'Announcements and Promotions',
         id: 'Announcements and Promotions',
-        isActive: false,
+        status: IStatusItem.Process,
       },
       {
         name: 'Spoiler 2 game maps',
         id: 'Spoiler 2 game maps',
-        isActive: false,
+        status: IStatusItem.Process,
       },
     ],
   },
@@ -108,32 +108,32 @@ export const steps: ISteps[] = [
       {
         name: '18240 Holders',
         id: '18240 Holders',
-        isActive: false,
+        status: IStatusItem.Pending,
       },
       {
         name: 'CoinGecko Listing',
         id: 'CoinGecko Listing',
-        isActive: false,
+        status: IStatusItem.Pending,
       },
       {
         name: 'Swap',
         id: 'Swap',
-        isActive: false,
+        status: IStatusItem.Pending,
       },
       {
         name: 'Burn',
         id: 'Burn',
-        isActive: false,
+        status: IStatusItem.Pending,
       },
       {
         name: 'NFT creation',
         id: 'NFT creation',
-        isActive: false,
+        status: IStatusItem.Pending,
       },
       {
         name: 'Airdrop for extraction among holders',
         id: 'Airdrop for extraction among holders',
-        isActive: false,
+        status: IStatusItem.Pending,
       },
     ],
   },
@@ -145,32 +145,32 @@ export const steps: ISteps[] = [
       {
         name: '45600 Holders',
         id: '45600 Holders',
-        isActive: false,
+        status: IStatusItem.Pending,
       },
       {
         name: 'Recruitment of collaborators',
         id: 'Recruitment of collaborators',
-        isActive: false,
+        status: IStatusItem.Pending,
       },
       {
         name: 'Conclusion of the other maps',
         id: 'Conclusion of the other maps',
-        isActive: false,
+        status: IStatusItem.Pending,
       },
       {
         name: 'Staking',
         id: 'Staking',
-        isActive: false,
+        status: IStatusItem.Pending,
       },
       {
         name: 'Game preview for lucky holders',
         id: 'Game preview for lucky holders',
-        isActive: false,
+        status: IStatusItem.Pending,
       },
       {
         name: 'NFT Lottery Program',
         id: 'NFT Lottery Program',
-        isActive: false,
+        status: IStatusItem.Pending,
       },
     ],
   },

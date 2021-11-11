@@ -23,7 +23,7 @@ const FirstTime: React.FC<Props> = ({ cards }) => (
     <SubTitle>This is a step by step instruction on how to buy SIU with Metamask.</SubTitle>
     <CardsWrap>
       {cards.map((card, index) => (
-        <Card card={card} backgroundNumber={index + 1} />
+        <Card card={card} key={index} backgroundNumber={index + 1} />
       ))}
     </CardsWrap>
   </FirstTimeStyled>

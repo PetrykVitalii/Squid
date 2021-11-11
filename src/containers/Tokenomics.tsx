@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import GraphIcon from '@/components/icons/GraphIcon';
 import Colors from '@/utils/Colors';
 
-const Tokenomics: React.FC = () => (
+interface Props {
+}
+
+const Tokenomics: React.FC<Props> = () => (
   <TokenomicsStyled>
     <Title>Tokenomics</Title>
     <IconWrap>

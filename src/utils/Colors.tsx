@@ -7,6 +7,8 @@ enum Colors {
   Blue = '#007575',
   Pink = '#72006D',
   Aqua = '#446059',
+  Gray = '#e7e7e7e6',
+  LightGrey = '#cbcbcb',
 }
 
 export default Colors;
