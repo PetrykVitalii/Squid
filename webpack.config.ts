@@ -17,11 +17,12 @@ export default {
     path: path.resolve(__dirname, 'build'),
   },
   devServer: {
-    contentBase: path.join(__dirname, 'build'),
-    inline: true,
+    client: {
+      overlay: false,
+    },
+    static: path.join(__dirname, 'build'),
     hot: true,
     port: Number(process.env.PORT),
-    publicPath: '/',
     host: '0.0.0.0',
     historyApiFallback: {
       index: '/',
