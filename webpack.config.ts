@@ -1,16 +1,16 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import createStyledComponentsTransformer from 'typescript-plugin-styled-components';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { Configuration } from 'webpack';
 
-const CompressionPlugin = require('compression-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-
 export default {
   mode: process.env.NODE_ENV,
   context: path.resolve(__dirname, 'src'),
-  entry: ['babel-polyfill', './index.tsx'],
+  entry: {
+    bundle: './index.tsx',
+  },
   output: {
     publicPath: '/',
     filename: '[name].[fullHash].js',
@@ -31,24 +31,13 @@ export default {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-          },
-        ],
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.(png|jpe?g|gif|jp2|webp|mp4)$/,
-        loader: 'file-loader',
+        test: /\.(ts|tsx)?$/,
+        loader: 'ts-loader',
         options: {
-          name: 'images/[name].[ext]'
-        }
+          getCustomTransformers: (program: any) => ({
+            before: [createStyledComponentsTransformer()],
+          }),
+        },
       },
     ],
   },
@@ -56,38 +45,7 @@ export default {
     plugins: [new TsconfigPathsPlugin()],
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
-  optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        test: /\.(js|jsx|ts|tsx)(\?.*)?$/i,
-        terserOptions: {
-          compress: true,
-        },
-      }),
-    ],
-    splitChunks: {
-      chunks: 'all',
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          priority: -10,
-          chunks: 'initial',
-          reuseExistingChunk: true,
-        }
-      }
-    },
-    runtimeChunk: {
-      name: 'manifest'
-    }
-  },
   plugins: [
-    new CompressionPlugin({
-      filename: '[name].gz',
-      algorithm: 'gzip',
-      test: /\.(js|ts|tsx|html|svg|png|woff|woff2)/i,
-    }),
     new HtmlWebpackPlugin({ template: './html/index.html' }),
     new CopyWebpackPlugin({ patterns: [{ from: 'assets', to: 'assets', noErrorOnMissing: true }] }),
   ],
