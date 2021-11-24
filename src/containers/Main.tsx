@@ -14,8 +14,14 @@ import Header from '@/containers/Header';
 import Whitepaper from '@/containers/Whitepaper';
 import FirstTime from '@/containers/FirstTime';
 
-import { cards, steps } from '@/utils/variables';
 import useScroll from '@/components/hooks/useScroll';
+
+import { cards, steps } from '@/utils/variables';
+import HomeIcon from '@/components/icons/NavigationIcons/HomeIcon';
+import RoadmapIcon from '@/components/icons/NavigationIcons/RoadmapIcon';
+import TokenomicsIcon from '@/components/icons/NavigationIcons/Tokenomics';
+import WhitepaperIcon from '@/components/icons/NavigationIcons/WhitepaperIcon';
+import FirstTimeIcon from '@/components/icons/NavigationIcons/FirstTime';
 
 interface Props {}
 
@@ -27,8 +33,23 @@ const Main: React.FC<Props> = () => {
   const whitepaperRef = useRef<HTMLDivElement | null>(null);
   const roadMapRef = useRef<HTMLDivElement | null>(null);
   const tokenomicsRef = useRef<HTMLDivElement | null>(null);
+  const firstTimeRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    if (
+      firstTimeRef && firstTimeRef.current
+      && firstTimeRef.current?.offsetTop - 10 <= scrollTop
+    ) {
+      setSelectedPath(Path.FirstTime);
+      return;
+    }
+    if (
+      whitepaperRef && whitepaperRef.current
+      && whitepaperRef.current?.offsetTop - 10 <= scrollTop
+    ) {
+      setSelectedPath(Path.Whitepaper);
+      return;
+    }
     if (
       tokenomicsRef && tokenomicsRef.current
       && tokenomicsRef.current.offsetTop - 10 <= scrollTop
@@ -41,13 +62,6 @@ const Main: React.FC<Props> = () => {
       && roadMapRef.current?.offsetTop - 10 <= scrollTop
     ) {
       setSelectedPath(Path.Roadmap);
-      return;
-    }
-    if (
-      whitepaperRef && whitepaperRef.current
-      && whitepaperRef.current?.offsetTop - 10 <= scrollTop
-    ) {
-      setSelectedPath(Path.Whitepaper);
       return;
     }
     setSelectedPath(Path.Home);
@@ -71,36 +85,45 @@ const Main: React.FC<Props> = () => {
       name: 'Home',
       isActive: selectedPath === Path.Home,
       onClick: () => {
-        // goTo(Path.Home);
         handleScrollIntoView(homeRef.current as HTMLDivElement);
       },
-    },
-    {
-      id: Path.Whitepaper,
-      name: 'Whitepaper',
-      isActive: selectedPath === Path.Whitepaper,
-      onClick: () => {
-        // goTo(Path.Whitepaper);
-        handleScrollIntoView(whitepaperRef.current as HTMLDivElement);
-      },
+      icon: <HomeIcon />,
     },
     {
       id: Path.Roadmap,
       name: 'Roadmap',
       isActive: selectedPath === Path.Roadmap,
       onClick: () => {
-        // goTo(Path.Roadmap);
         handleScrollIntoView(roadMapRef.current as HTMLDivElement);
       },
+      icon: <RoadmapIcon />,
     },
     {
       id: Path.Tokenomics,
       name: 'Tokenomics',
       isActive: selectedPath === Path.Tokenomics,
       onClick: () => {
-        // goTo(Path.Tokenomics);
         handleScrollIntoView(tokenomicsRef.current as HTMLDivElement);
       },
+      icon: <TokenomicsIcon />,
+    },
+    {
+      id: Path.Whitepaper,
+      name: 'Whitepaper',
+      isActive: selectedPath === Path.Whitepaper,
+      onClick: () => {
+        handleScrollIntoView(whitepaperRef.current as HTMLDivElement);
+      },
+      icon: <WhitepaperIcon />,
+    },
+    {
+      id: Path.FirstTime,
+      name: 'First time?',
+      isActive: selectedPath === Path.FirstTime,
+      onClick: () => {
+        handleScrollIntoView(firstTimeRef.current as HTMLDivElement);
+      },
+      icon: <FirstTimeIcon />,
     },
   ]), [selectedPath]);
 
@@ -122,16 +145,18 @@ const Main: React.FC<Props> = () => {
       <Wrapper ref={homeRef}>
         <Home />
       </Wrapper>
-      <Wrapper ref={whitepaperRef}>
-        <Whitepaper />
-      </Wrapper>
       <Wrapper ref={roadMapRef}>
         <RoadMap steps={steps} />
       </Wrapper>
       <Wrapper ref={tokenomicsRef}>
         <Tokenomics />
       </Wrapper>
-      <FirstTime cards={cards} />
+      <Wrapper ref={whitepaperRef}>
+        <Whitepaper />
+      </Wrapper>
+      <Wrapper ref={firstTimeRef}>
+        <FirstTime cards={cards} />
+      </Wrapper>
       <Footer />
     </MainStyled>
   );

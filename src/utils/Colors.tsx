@@ -1,4 +1,4 @@
-enum Colors {
+export enum Colors {
   White = '#fff',
   Black = '#0C0C0C',
   Red = '#f90a0a',
@@ -9,6 +9,12 @@ enum Colors {
   Aqua = '#446059',
   Gray = '#e7e7e7e6',
   LightGrey = '#cbcbcb',
+  DarkRed = '#cb000080',
+  BlackTransparent = '#000000e6',
 }
 
-export default Colors;
+export interface IStatusColor {
+  left: Colors,
+  right: Colors,
+  main: Colors,
+}

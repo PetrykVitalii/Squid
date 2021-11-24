@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Colors from '@/utils/Colors';
+import { Colors } from '@/utils/colors';
 
 const FullBatteryIcon: React.FC = () => (
   <svg
-    width="60px"
-    height="30px"
+    width="30px"
+    height="25px"
     aria-hidden="true"
     focusable="false"
     data-prefix="fas"

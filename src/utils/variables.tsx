@@ -4,15 +4,20 @@ import React from 'react';
 import { ICard } from '@/containers/FirstTime';
 import { IStatusItem, ISteps } from '@/containers/RoadMap';
 
-import FoxIcon from '@/components/icons/FoxIcon';
+import FoxIcon from '@/components/icons/CardsIcon/FoxIcon';
 
-import Colors from '@/utils/Colors';
+import { Colors } from '@/utils/colors';
+import BnbIcon from '@/components/icons/CardsIcon/BnbIcon';
+import TransferIcon from '@/components/icons/CardsIcon/TransferIcon';
+import CuteIcon from '@/components/icons/CardsIcon/CuteIcon';
+import SwapIcon from '@/components/icons/CardsIcon/SwapIcon';
+import MoneyIcon from '@/components/icons/CardsIcon/MoneyIcon';
 
 export const steps: ISteps[] = [
   {
-    name: 'Step1',
+    name: 'Step 1',
     id: 'Step1',
-    isActive: true,
+    status: IStatusItem.Success,
     td: [
       {
         name: 'Website launch',
@@ -42,9 +47,9 @@ export const steps: ISteps[] = [
     ],
   },
   {
-    name: 'Step2',
+    name: 'Step 2',
     id: 'Step2',
-    isActive: true,
+    status: IStatusItem.Success,
     td: [
       {
         name: 'Pre Sale',
@@ -69,9 +74,9 @@ export const steps: ISteps[] = [
     ],
   },
   {
-    name: 'Step3',
+    name: 'Step 3',
     id: 'Step3',
-    isActive: false,
+    status: IStatusItem.Process,
     td: [
       {
         name: '4560 Holders',
@@ -101,9 +106,9 @@ export const steps: ISteps[] = [
     ],
   },
   {
-    name: 'Step4',
+    name: 'Step 4',
     id: 'Step4',
-    isActive: false,
+    status: IStatusItem.Pending,
     td: [
       {
         name: '18240 Holders',
@@ -138,9 +143,9 @@ export const steps: ISteps[] = [
     ],
   },
   {
-    name: 'Step5',
+    name: 'Step 5',
     id: 'Step5',
-    isActive: false,
+    status: IStatusItem.Pending,
     td: [
       {
         name: '45600 Holders',
@@ -185,35 +190,35 @@ export const cards: ICard[] = [
     text: "Go to Metamask and load the app. Follow the in-app-tutorial, log in and get started. Don't forget to write down your private pass-phrase (don't lose it!).",
   },
   {
-    icon: <FoxIcon />,
+    icon: <BnbIcon />,
     title: 'Buy',
     colorTitle: 'BNB',
     color: Colors.Yellow,
     text: 'Get some BNB at your preferred exchange.',
   },
   {
-    icon: <FoxIcon />,
+    icon: <TransferIcon />,
     title: 'Transfer to',
     colorTitle: 'Metamask',
     color: Colors.Green,
     text: 'Copy your Metamask address and transfer BNB to your wallet.',
   },
   {
-    icon: <FoxIcon />,
+    icon: <CuteIcon />,
     title: 'Connect to',
     colorTitle: 'PANCAKESWAP',
     color: Colors.Blue,
     text: 'Find the official SIU contract address here (copy contract on top right corner) and connect your wallet to Pancakeswap',
   },
   {
-    icon: <FoxIcon />,
+    icon: <SwapIcon />,
     title: '',
     colorTitle: 'Swap',
     color: Colors.Pink,
     text: 'Select From bnb to paste in official SIU contract adress and click import. Put in the BNB-amount you wish to swap.Make sure you got enough BNB for the transaction fee (set slip 13%).',
   },
   {
-    icon: <FoxIcon />,
+    icon: <MoneyIcon />,
     title: 'Add',
     colorTitle: 'liquidity',
     color: Colors.Aqua,

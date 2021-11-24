@@ -32,6 +32,12 @@ const GlobalStyle = createGlobalStyle`
     overflow: auto;
     position: relative;
     z-index: 1;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   button {

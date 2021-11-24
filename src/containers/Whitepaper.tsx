@@ -2,7 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Colors from '@/utils/Colors';
+import { Colors } from '@/utils/colors';
+import { device } from '@/utils/responsiveDesign';
 
 const Whitepaper: React.FC = () => (
   <WhitepaperStyled>
@@ -171,21 +172,69 @@ const Text = styled.div<{ align?: 'center' | 'right' }>`
   font-size: 24px;
   font-weight: 800;
   line-height: 36px;
+
+  @media ${device.desktop} {
+    font-size: 22px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 20px;
+  }
+
+  @media ${device.tablet} {
+    font-size: 18px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 16px;
+  }
 `;
 
 const HalfSizeText = styled(Text)`
-  width: 80%;
   margin-left: auto;
+  width: 80%;
+
+  @media ${device.desktop} {
+    width: 85%;
+  }
+
+  @media ${device.laptop} {
+    width: 90%;
+  }
+
+  @media ${device.tablet} {
+    width: 92%;
+  }
+
+  @media ${device.mobile} {
+    width: 95%;
+  }
 `;
 
 const CompetitiveBlock = styled(Text)`
   margin-left: auto;
-  margin-right: -80px;
-  width: 80%;
+  margin-right: -5%;
   background-color: ${Colors.Black};
   color: ${Colors.White};
-  padding: 5px 80px 5px 30px;
+  padding: 8px 5% 8px 3%;
   border-radius: 45px;
+  width: 80%;
+
+  @media ${device.desktop} {
+    width: 85%;
+  }
+
+  @media ${device.laptop} {
+    width: 90%;
+  }
+
+  @media ${device.tablet} {
+    width: 92%;
+  }
+
+  @media ${device.mobile} {
+    width: 95%;
+  }
 `;
 
 const Paragraph = styled.span`
@@ -204,23 +253,55 @@ const SubTitle = styled.div<{ alignRight?: boolean }>`
   font-size: 36px;
   font-style: normal;
   font-weight: 800;
-  margin: 30px 0;
+  margin: 3% 0;
   margin-left: ${({ alignRight }) => alignRight && 'auto'};
   width: min-content;
   border-bottom: 3px solid ${Colors.Black};
   white-space: nowrap;
+
+  @media ${device.desktop} {
+    font-size: 32px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 30px;
+  }
+
+  @media ${device.tablet} {
+    font-size: 24px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 20px;
+  }
 `;
 
 const Title = styled.div`
   font-size: 97px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 2%;
   text-shadow: 0px -15px ${Colors.LightGrey};
+
+  @media ${device.desktop} {
+    font-size: 90px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 80px;
+  }
+
+  @media ${device.tablet} {
+    font-size: 60px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 40px;
+  }
 `;
 
 const WhitepaperStyled = styled.div`
-  padding: 100px 80px 50px;
+  padding: 6% 5% 3%;
   background-color: ${Colors.Gray};
   display: flex;
   flex-direction: column;

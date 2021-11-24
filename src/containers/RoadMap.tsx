@@ -3,9 +3,8 @@ import styled from 'styled-components';
 
 import Table from '@/components/common/Table';
 
-import RoadMapIcon from '@/components/icons/RoadMapIcon';
-
-import Colors from '@/utils/Colors';
+import { Colors } from '@/utils/colors';
+import { device } from '@/utils/responsiveDesign';
 
 export enum IStatusItem {
   Success = 'success',
@@ -20,7 +19,7 @@ export interface ITdData {
 }
 
 export interface ISteps {
-  isActive: boolean;
+  status: IStatusItem;
   name: string;
   id: string;
   td: ITdData[];
@@ -48,9 +47,7 @@ const RoadMap: React.FC<Props> = ({ steps }) => (
           token.
         </Info>
       </InfoWrap>
-      <IconWrap>
-        <RoadMapIcon />
-      </IconWrap>
+      <IconWrap src="/assets/men.png" />
     </Wrapper>
     <TableWrapper>
       <Table steps={steps} />
@@ -58,33 +55,77 @@ const RoadMap: React.FC<Props> = ({ steps }) => (
   </RoadMapStyled>
 );
 
-const TableWrapper = styled.div``;
+const TableWrapper = styled.div`
+  @media ${device.tablet} {
+    overflow-y: auto;
+  }
+`;
 
-const InfoWrap = styled.div``;
+const InfoWrap = styled.div`
+  flex: 1;
+`;
 
-const IconWrap = styled.div`
+const IconWrap = styled.img`
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 500px;
+  width: 50%;
 `;
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 30px;
+  padding: 0 2% 0 5%;
 `;
 
 const Info = styled.div`
   font-size: 36px;
   font-weight: 600;
   line-height: 70px;
+
+  @media ${device.desktop} {
+    font-size: 32px;
+    line-height: 60px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 28px;
+    line-height: 50px;
+  }
+
+  @media ${device.tablet} {
+    font-size: 24px;
+    line-height: 40px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 18px;
+    line-height: 30px;
+  }
 `;
 
 const Title = styled.div`
   font-size: 96px;
   font-weight: 400;
-  margin-bottom: 30px;
+  margin-bottom: 3%;
+
+  @media ${device.desktop} {
+    font-size: 80px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 70px;
+  }
+
+  @media ${device.tablet} {
+    font-size: 55px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 40px;
+  }
 `;
 
 const SelectedLetters = styled.span`
@@ -92,7 +133,10 @@ const SelectedLetters = styled.span`
 `;
 
 const RoadMapStyled = styled.div`
-  padding: 20px;
+  padding: 20px 0;
+  @media ${device.tablet} {
+    padding-bottom: 0;
+  }
 `;
 
 export default RoadMap;

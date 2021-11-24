@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 import Card from '@/components/common/Card';
 
-import Colors from '@/utils/Colors';
+import { Colors } from '@/utils/colors';
+import { device } from '@/utils/responsiveDesign';
 
 export interface ICard {
   icon: React.ReactElement;
@@ -34,16 +35,35 @@ const CardsWrap = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 5%;
+
+  @media ${device.mobile} {
+    justify-content: center;
+  }
 `;
 
 const SubTitle = styled.div`
   font-size: 36px;
   font-weight: 400;
-  line-height: 53px;
+  line-height: 50px;
   text-align: center;
   color: ${Colors.White};
-  margin-bottom: 84px;
+  margin-bottom: 5%;
+
+  @media ${device.desktop} {
+    font-size: 32px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 28px;
+  }
+
+  @media ${device.tablet} {
+    font-size: 24px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 20px;
+  }
 `;
 
 const Title = styled.div`
@@ -54,10 +74,26 @@ const Title = styled.div`
   border-bottom: 2px solid ${Colors.Red};
   width: min-content;
   white-space: nowrap;
+
+  @media ${device.desktop} {
+    font-size: 90px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 80px;
+  }
+
+  @media ${device.tablet} {
+    font-size: 60px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 40px;
+  }
 `;
 
 const FirstTimeStyled = styled.div`
-  padding: 25px 70px 80px;
+  padding: 25px 5% 4%;
   background-color: ${Colors.Black};
 `;
 

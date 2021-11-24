@@ -2,11 +2,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import FoxIcon from '@/components/icons/FoxIcon';
-
 import { ICard } from '@/containers/FirstTime';
 
-import Colors from '@/utils/Colors';
+import { Colors } from '@/utils/colors';
+import { device } from '@/utils/responsiveDesign';
 
 interface Props {
   card: ICard;
@@ -17,7 +16,7 @@ const Card: React.FC<Props> = ({ card, backgroundNumber }) => (
   <CardStyled>
     <LineWrap>
       <IconWrap>
-        <FoxIcon />
+        {card.icon}
       </IconWrap>
     </LineWrap>
     <InfoWrap>
@@ -67,7 +66,7 @@ const Title = styled.div`
   border-bottom-width: 3px;
   border-bottom-style: solid;
   border-image: linear-gradient(to right, rgba(0,0,0,0),rgba(0,0,0,0.8),rgba(0,0,0,0)) 1;
-  margin: 15px 0;
+  margin: 30px 0 15px;
   padding-bottom: 5px;
 `;
 
@@ -79,7 +78,8 @@ const IconWrap = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-  top: -20px;
+  width: 110px;
+  height: 110px;
 `;
 
 const LineWrap = styled.div`
@@ -87,11 +87,14 @@ const LineWrap = styled.div`
   box-shadow: 0px 4px 4px #000000;
   width: 100%;
   height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const CardStyled = styled.div`
   flex-basis: 30%;
-  min-height: 404px;
+  min-height: 450px;
   background: ${Colors.White};
   box-shadow: 5px 5px 0px #840000;
   border-radius: 20px;
@@ -106,6 +109,15 @@ const CardStyled = styled.div`
     box-shadow: 10px 10px 0px #840000;
     left: -5px;
     top: -5px;
+  }
+
+
+  @media ${device.laptop} {
+    flex-basis: 45%;
+  }
+
+  @media ${device.mobile} {
+    flex-basis: 70%;
   }
 `;
 

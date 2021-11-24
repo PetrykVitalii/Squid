@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import CardIcon from '@/components/icons/CardIcon';
-
-import Colors from '@/utils/Colors';
+import { Colors } from '@/utils/colors';
+import { device } from '@/utils/responsiveDesign';
 
 interface Props {
 }
@@ -35,38 +34,80 @@ const Home: React.FC<Props> = () => (
         Welcome to our common universe!
       </Text>
     </Article>
-    <CardIconWrap>
-      <CardIcon />
-    </CardIconWrap>
+    <CardIconWrap src="/assets/card.png" />
   </HomeStyled>
 );
 
-const CardIconWrap = styled.div`
+const CardIconWrap = styled.img`
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 200px;
+  object-fit: contain;
 `;
 
 const Title = styled.div`
   filter: drop-shadow(0px 4px 1px rgba(243, 0, 0, 0.2));
-  border-left: 7px solid #F90A0A;
-  border-bottom: 7px solid #F90A0A;
+  border-left: 8px solid #F90A0A;
+  border-bottom: 8px solid #F90A0A;
   font-size: 96px;
   color: ${Colors.Red};
-  font-weight: 400;
+  font-weight: 700;
   width: min-content;
   padding: 0 20px;
   margin-left: 30px;
+  margin-bottom: 2%;
+
+  @media ${device.desktop} {
+    font-size: 80px;
+    border-width: 6px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 70px;
+    border-width: 5px;
+  }
+
+  @media ${device.tablet} {
+    font-size: 60px;
+    border-width: 4px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 40px;
+    border-width: 3px;
+  }
 `;
 
 const SubTitle = styled.div`
   border-bottom: 2px solid #FBFAFA;
   width: min-content;
   color: ${Colors.White};
-  margin-bottom: 50px;
+  margin-bottom: 4%;
   font-size: 88px;
   font-weight: 500;
   white-space: nowrap;
+
+  @media ${device.desktop} {
+    font-size: 70px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 60px;
+  }
+
+  @media ${device.tablet} {
+    font-size: 50px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 30px;
+  }
 `;
 
 const SubTitleReverse = styled(SubTitle)`
@@ -77,9 +118,33 @@ const Text = styled.div`
   color: ${Colors.White};
   font-size: 40px;
   font-weight: 700;
-  margin-bottom: 80px;
+  margin-bottom: 6%;
   width: 70%;
   line-height: 62px;
+
+  @media ${device.desktop} {
+    font-size: 35px;
+    width: 75%;
+    line-height: 55px;
+  }
+
+  @media ${device.laptop} {
+    font-size: 30px;
+    width: 80%;
+    line-height: 50px;
+  }
+
+  @media ${device.tablet} {
+    font-size: 25px;
+    width: 85%;
+    line-height: 45px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 16px;
+    width: 90%;
+    line-height: 40px;
+  }
 `;
 
 const TextReverse = styled(Text)`
@@ -88,12 +153,17 @@ const TextReverse = styled(Text)`
 `;
 
 const Article = styled.article`
+  position: relative;
+  z-index: 2;
 `;
 
 const HomeStyled = styled.div`
-  padding: 100px 80px 50px;
-  background-color: ${Colors.Black};
+  padding: 6% 5% 3%;
   position: relative;
+  background-image: url("/assets/home-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: ${Colors.Black};
 `;
 
 export default Home;

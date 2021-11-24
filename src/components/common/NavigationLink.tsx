@@ -1,28 +1,47 @@
-import React from 'react';
+/* eslint-disable react/require-default-props */
+import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
 import { Path } from '@/containers/Navigation';
 
-import Colors from '@/utils/Colors';
+import { Colors } from '@/utils/colors';
+
+export enum ButtonTheme {
+  default = 'default',
+  burger = 'burger',
+}
 
 export interface ILink {
   id: Path;
   name: string;
   isActive: boolean;
-  onClick?: () => void;
+  onClick: () => void;
+  icon: ReactNode;
 }
 
 interface Props {
   link: ILink;
+  theme?: ButtonTheme;
 }
 
-const NavigationLink: React.FC<Props> = ({ link }) => (
-  <NavigationLinkStyled onClick={link.onClick} isActive={link.isActive}>
-    {link.name}
-  </NavigationLinkStyled>
-);
+const NavigationLink = ({ link, theme = ButtonTheme.default }: Props) => {
+  const themes = {
+    [ButtonTheme.default]: DefaultLink,
+    [ButtonTheme.burger]: BurgerLink,
+  };
 
-const NavigationLinkStyled = styled.div<{ isActive: boolean }>`
+  const ThemedButton = themes[theme];
+
+  return (
+    <ThemedButton onClick={link.onClick} isActive={link.isActive}>
+      {link.name}
+    </ThemedButton>
+  );
+};
+
+NavigationLink.theme = ButtonTheme;
+
+const BurgerLink = styled.div<{ isActive: boolean }>`
   padding: 5px 15px;
   font-weight: 600;
   font-size: 23px;
@@ -32,6 +51,29 @@ const NavigationLinkStyled = styled.div<{ isActive: boolean }>`
   cursor: pointer;
   border: 2px solid transparent;
   border-radius: 45px;
+  white-space: nowrap;
+  width: 100%;
+
+  :hover {
+    color: ${Colors.Red};
+  }
+
+  ${({ isActive }) => isActive && css`
+    color: ${Colors.Red};
+  `};
+`;
+
+const DefaultLink = styled.div<{ isActive: boolean }>`
+  padding: 5px 15px;
+  font-weight: 600;
+  font-size: 23px;
+  text-align: center;
+  color: ${Colors.White};
+  margin: 0 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 45px;
+  white-space: nowrap;
 
   :hover {
     border-color: ${Colors.White};
