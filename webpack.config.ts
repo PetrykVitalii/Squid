@@ -31,9 +31,13 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
-        loader: 'ts-loader',
+        use: [
+          {
+            loader: 'babel-loader',
+          },
+        ],
       },
       {
         test: /\.css$/,
