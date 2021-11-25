@@ -86,9 +86,10 @@ const DefaultLink = styled.div<{ isActive: boolean }>`
   ${({ isActive }) => isActive && css`
     background: linear-gradient(111.15deg, #FF1C1C 28.18%, #860606 66.94%);
     color: ${Colors.Black};
+    border-color: ${Colors.Red};
 
     :hover {
-      border-color: transparent;
+      border-color: ${Colors.Red};
     }
   `};
 `;
