@@ -4,6 +4,9 @@ import createStyledComponentsTransformer from 'typescript-plugin-styled-componen
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { Configuration } from 'webpack';
+import { config } from 'dotenv';
+
+config();
 
 export default {
   mode: process.env.NODE_ENV,
