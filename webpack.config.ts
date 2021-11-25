@@ -42,6 +42,20 @@ export default {
           }),
         },
       },
+      {
+        test: /\.(png|jpe?g|gif|jp2|webp)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/[name].[ext]'
+        }
+      },
+      {
+        test: /\.mp4$/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/[name].[ext]'
+        }
+      },
     ],
   },
   resolve: {
