@@ -44,6 +44,9 @@ export default {
   resolve: {
     plugins: [new TsconfigPathsPlugin()],
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    alias: {
+      '@': '/src',
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({ template: './html/index.html' }),
