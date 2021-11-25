@@ -6,8 +6,8 @@ import TelegramIcon from '@/components/icons/TelegramIcon';
 import TikTokIcon from '@/components/icons/TikTokIcon';
 import TwitterIcon from '@/components/icons/TwitterIcon';
 
-import { Colors } from '@/utils/colors';
-import { device } from '@/utils/responsiveDesign';
+import { Colors } from '@/utils/styles/colors';
+import { device } from '@/utils/styles/responsiveDesign';
 
 const Footer: React.FC = () => (
   <FooterStyled>

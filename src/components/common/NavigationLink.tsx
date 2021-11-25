@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 
 import { Path } from '@/containers/Navigation';
 
-import { Colors } from '@/utils/colors';
+import { Colors } from '@/utils/styles/colors';
 
 export enum ButtonTheme {
   default = 'default',

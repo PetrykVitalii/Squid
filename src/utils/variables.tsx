@@ -6,7 +6,7 @@ import { IStatusItem, ISteps } from '@/containers/RoadMap';
 
 import FoxIcon from '@/components/icons/CardsIcon/FoxIcon';
 
-import { Colors } from '@/utils/colors';
+import { Colors } from '@/utils/styles/colors';
 import BnbIcon from '@/components/icons/CardsIcon/BnbIcon';
 import TransferIcon from '@/components/icons/CardsIcon/TransferIcon';
 import CuteIcon from '@/components/icons/CardsIcon/CuteIcon';

@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import GraphIcon from '@/components/icons/GraphIcon';
-import { Colors } from '@/utils/colors';
-import { device } from '@/utils/responsiveDesign';
+import { Colors } from '@/utils/styles/colors';
+import { device } from '@/utils/styles/responsiveDesign';
 
 interface Props {
 }

@@ -1,4 +1,4 @@
-import { Colors } from '@/utils/colors';
+import { Colors } from '@/utils/styles/colors';
 import React from 'react';
 
 const TikTokIcon: React.FC = () => (

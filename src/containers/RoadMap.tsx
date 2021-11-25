@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import Table from '@/components/common/Table';
 
-import { Colors } from '@/utils/colors';
-import { device } from '@/utils/responsiveDesign';
+import { Colors } from '@/utils/styles/colors';
+import { device } from '@/utils/styles/responsiveDesign';
 
 export enum IStatusItem {
   Success = 'success',

@@ -7,8 +7,8 @@ import FullBatteryIcon from '@/components/icons/FullBatteryIcon';
 import EmptyBatteryIcon from '@/components/icons/EmptyBatteryIcon';
 import HalfBatteryIcon from '@/components/icons/HalfBatteryIcon';
 
-import { Colors, IStatusColor } from '@/utils/colors';
-import { device, vars } from '@/utils/responsiveDesign';
+import { Colors, IStatusColor } from '@/utils/styles/colors';
+import { device, vars } from '@/utils/styles/responsiveDesign';
 
 interface Props {
   steps: ISteps[];

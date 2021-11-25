@@ -8,8 +8,8 @@ import LogoIcon from '@/components/icons/LogoIcon';
 import useToggle from '@/components/hooks/useToggle';
 import useScroll from '@/components/hooks/useScroll';
 
-import { Colors } from '@/utils/colors';
-import { device } from '@/utils/responsiveDesign';
+import { Colors } from '@/utils/styles/colors';
+import { device } from '@/utils/styles/responsiveDesign';
 import useOnClickOutside from '@/components/hooks/useOnClickOutside';
 
 export enum Path {

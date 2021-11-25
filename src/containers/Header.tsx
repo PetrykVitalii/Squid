@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Video from '@/components/common/Video';
 import Button from '@/components/common/Button';
 
-import { Colors } from '@/utils/colors';
+import { Colors } from '@/utils/styles/colors';
 
 interface Props {
   handlePreSale: () => void;

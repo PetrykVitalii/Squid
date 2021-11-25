@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 import { ICard } from '@/containers/FirstTime';
 
-import { Colors } from '@/utils/colors';
-import { device } from '@/utils/responsiveDesign';
+import { Colors } from '@/utils/styles/colors';
+import { device } from '@/utils/styles/responsiveDesign';
 
 interface Props {
   card: ICard;
