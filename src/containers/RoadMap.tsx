@@ -47,7 +47,7 @@ const RoadMap: React.FC<Props> = ({ steps }) => (
           token.
         </Info>
       </InfoWrap>
-      <IconWrap src="/assets/men.png" />
+      <IconWrap src="/assets/man.png" />
     </Wrapper>
     <TableWrapper>
       <Table steps={steps} />

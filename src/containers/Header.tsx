@@ -5,6 +5,7 @@ import Video from '@/components/common/Video';
 import Button from '@/components/common/Button';
 
 import { Colors } from '@/utils/styles/colors';
+import { device } from '@/utils/styles/responsiveDesign';
 
 interface Props {
   handlePreSale: () => void;
@@ -30,11 +31,15 @@ const Header: React.FC<Props> = ({ handlePreSale }) => {
 
 const ButtonWrapper = styled.div`
   position: absolute;
-  bottom: 40px;
+  bottom: 100px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media ${device.tablet} {
+    bottom: 40px;
+  }
 `;
 
 const VideoContainer = styled.div`

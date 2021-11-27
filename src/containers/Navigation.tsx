@@ -8,6 +8,7 @@ import LogoIcon from '@/components/icons/LogoIcon';
 import useToggle from '@/components/hooks/useToggle';
 import useOnClickOutside from '@/components/hooks/useOnClickOutside';
 import useScroll from '@/components/hooks/useScroll';
+import useWindowScrollBlock from '@/components/hooks/useWindowScrollBlock';
 
 import { Colors } from '@/utils/styles/colors';
 import { device } from '@/utils/styles/responsiveDesign';
@@ -52,6 +53,8 @@ const Navigation: React.FC<Props> = ({ handleClick, links }) => {
     closeBurger();
     linkClick();
   };
+
+  useWindowScrollBlock(isActive);
 
   return (
     <NavigationStyled isDarker={scrollTop > 50 || isActive}>
@@ -200,18 +203,18 @@ const Menu = styled.menu`
 `;
 
 const Title = styled.div`
-  font-size: 52px;
+  font-size: 40px;
   font-weight: 800;
   color: ${Colors.White};
   white-space: nowrap;
   margin-left: 10px;
 
   @media ${device.desktop} {
-    font-size: 45px;
+    font-size: 35px;
   }
 
   @media ${device.laptop} {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   @media ${device.tablet} {
@@ -223,14 +226,14 @@ const TitleWrap = styled.div`
 `;
 
 const LogoWrap = styled.div`
-  width: 110px;
+  width: 80px;
 
   @media ${device.desktop} {
-    width: 105px;
+    width: 80px;
   }
 
   @media ${device.laptop} {
-    width: 100px;
+    width: 70px;
   }
 
   @media ${device.tablet} {
@@ -253,7 +256,7 @@ const NavigationStyled = styled.header<{ isDarker: boolean }>`
   left: 0;
   top: 0;
   right: 0;
-  max-height: 134px;
+  max-height: 100px;
   z-index: 10;
   padding: 5px 4%;
   display: flex;
