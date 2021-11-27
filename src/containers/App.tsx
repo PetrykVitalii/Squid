@@ -27,8 +27,6 @@ const GlobalStyle = createGlobalStyle`
 
   #root {
     background-color: white;
-    min-height: 100vh;
-    /* max-height: 100vh; */
     overflow: auto;
     position: relative;
     z-index: 1;
