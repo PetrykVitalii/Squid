@@ -76,7 +76,6 @@ const IconWrap = styled.div`
 
 const Title = styled.div`
   font-size: 96px;
-  font-weight: 600;
   text-align: center;
   margin-bottom: 40px;
   color: ${Colors.White};

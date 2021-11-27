@@ -88,7 +88,7 @@ const SubTitle = styled.div`
   border-bottom: 2px solid #FBFAFA;
   width: min-content;
   color: ${Colors.White};
-  margin-bottom: 4%;
+  margin-bottom: 3%;
   font-size: 88px;
   font-weight: 500;
   white-space: nowrap;
@@ -116,34 +116,33 @@ const SubTitleReverse = styled(SubTitle)`
 
 const Text = styled.div`
   color: ${Colors.White};
-  font-size: 40px;
-  font-weight: 700;
+  font-size: 35px;
   margin-bottom: 6%;
   width: 70%;
   line-height: 62px;
 
   @media ${device.desktop} {
-    font-size: 35px;
+    font-size: 30px;
     width: 75%;
     line-height: 55px;
   }
 
   @media ${device.laptop} {
-    font-size: 30px;
+    font-size: 25px;
     width: 80%;
     line-height: 50px;
   }
 
   @media ${device.tablet} {
-    font-size: 25px;
+    font-size: 20px;
     width: 85%;
-    line-height: 45px;
+    line-height: 40px;
   }
 
   @media ${device.mobile} {
     font-size: 16px;
     width: 90%;
-    line-height: 40px;
+    line-height: 30px;
   }
 `;
 
