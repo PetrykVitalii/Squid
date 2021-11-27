@@ -10,16 +10,23 @@ interface Props {
   handlePreSale: () => void;
 }
 
-const Header: React.FC<Props> = ({ handlePreSale }) => (
-  <HeaderStyled>
-    <VideoContainer>
-      <Video url="/assets/gif.mp4" />
-    </VideoContainer>
-    <ButtonWrapper>
-      <Button onClick={handlePreSale}>Pre-Sale</Button>
-    </ButtonWrapper>
-  </HeaderStyled>
-);
+const Header: React.FC<Props> = ({ handlePreSale }) => {
+  const handleVideoClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    e.preventDefault();
+  };
+
+  return (
+    <HeaderStyled>
+      <VideoContainer onClick={handleVideoClick}>
+        <Video url="/assets/gif.mp4" />
+      </VideoContainer>
+      <ButtonWrapper>
+        <Button onClick={handlePreSale}>Pre-Sale</Button>
+      </ButtonWrapper>
+    </HeaderStyled>
+  );
+};
 
 const ButtonWrapper = styled.div`
   position: absolute;

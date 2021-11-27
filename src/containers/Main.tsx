@@ -169,7 +169,7 @@ const Wrapper = styled.div`
 const MainStyled = styled.div<{ height: number }>`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: ${({ height }) => height && `${height}px`};
 `;
 
 export default Main;
