@@ -134,7 +134,7 @@ const Main: React.FC<Props> = () => {
   };
 
   return (
-    <MainStyled>
+    <MainStyled height={window.innerHeight}>
       <Navigation
         handleClick={handleLogo}
         links={links}
@@ -166,10 +166,10 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const MainStyled = styled.div`
+const MainStyled = styled.div<{ height: number }>`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: ${({ height }) => height && `${height}px`};
 `;
 
 export default Main;
