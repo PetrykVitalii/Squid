@@ -12,6 +12,7 @@ import useWindowScrollBlock from '@/components/hooks/useWindowScrollBlock';
 
 import { Colors } from '@/utils/styles/colors';
 import { device } from '@/utils/styles/responsiveDesign';
+import { componentsStyle } from '@/utils/variables';
 
 export enum Path {
   Home = 'home',
@@ -256,7 +257,8 @@ const NavigationStyled = styled.header<{ isDarker: boolean }>`
   left: 0;
   top: 0;
   right: 0;
-  max-height: 100px;
+  max-height: ${`${componentsStyle.navigation.height.desktop}px`};
+  height: ${`${componentsStyle.navigation.height.desktop}px`};
   z-index: 10;
   padding: 5px 4%;
   display: flex;
@@ -264,8 +266,8 @@ const NavigationStyled = styled.header<{ isDarker: boolean }>`
   align-items: center;
 
   @media ${device.tablet} {
-    max-height: 60px;
-    height: 60px;
+    max-height: ${`${componentsStyle.navigation.height.tablet}px`};
+    height: ${`${componentsStyle.navigation.height.tablet}px`};
   }
 `;
 

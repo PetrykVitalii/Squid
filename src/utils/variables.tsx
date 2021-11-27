@@ -13,6 +13,15 @@ import CuteIcon from '@/components/icons/CardsIcon/CuteIcon';
 import SwapIcon from '@/components/icons/CardsIcon/SwapIcon';
 import MoneyIcon from '@/components/icons/CardsIcon/MoneyIcon';
 
+export const componentsStyle = {
+  navigation: {
+    height: {
+      tablet: 60,
+      desktop: 100,
+    },
+  },
+};
+
 export const steps: ISteps[] = [
   {
     name: 'Step 1',

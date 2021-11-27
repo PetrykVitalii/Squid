@@ -5,6 +5,12 @@ import styled from 'styled-components';
 
 import { ILink } from '@/components/common/NavigationLink';
 
+import HomeIcon from '@/components/icons/NavigationIcons/HomeIcon';
+import RoadmapIcon from '@/components/icons/NavigationIcons/RoadmapIcon';
+import TokenomicsIcon from '@/components/icons/NavigationIcons/Tokenomics';
+import WhitepaperIcon from '@/components/icons/NavigationIcons/WhitepaperIcon';
+import FirstTimeIcon from '@/components/icons/NavigationIcons/FirstTime';
+
 import Navigation, { Path } from '@/containers/Navigation';
 import RoadMap from '@/containers/RoadMap';
 import Footer from '@/containers/Footer';
@@ -16,12 +22,8 @@ import FirstTime from '@/containers/FirstTime';
 
 import useScroll from '@/components/hooks/useScroll';
 
-import { cards, steps } from '@/utils/variables';
-import HomeIcon from '@/components/icons/NavigationIcons/HomeIcon';
-import RoadmapIcon from '@/components/icons/NavigationIcons/RoadmapIcon';
-import TokenomicsIcon from '@/components/icons/NavigationIcons/Tokenomics';
-import WhitepaperIcon from '@/components/icons/NavigationIcons/WhitepaperIcon';
-import FirstTimeIcon from '@/components/icons/NavigationIcons/FirstTime';
+import { cards, componentsStyle, steps } from '@/utils/variables';
+import { vars } from '@/utils/styles/responsiveDesign';
 
 interface Props {}
 
@@ -36,30 +38,34 @@ const Main: React.FC<Props> = () => {
   const firstTimeRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const heightUpperBlock = window.innerWidth >= vars.screen_width.laptop
+      ? componentsStyle.navigation.height.desktop + 10
+      : componentsStyle.navigation.height.tablet + 10;
+
     if (
       firstTimeRef && firstTimeRef.current
-      && firstTimeRef.current?.offsetTop - 10 <= scrollTop
+      && firstTimeRef.current?.offsetTop - heightUpperBlock <= scrollTop
     ) {
       setSelectedPath(Path.FirstTime);
       return;
     }
     if (
       whitepaperRef && whitepaperRef.current
-      && whitepaperRef.current?.offsetTop - 10 <= scrollTop
+      && whitepaperRef.current?.offsetTop - heightUpperBlock <= scrollTop
     ) {
       setSelectedPath(Path.Whitepaper);
       return;
     }
     if (
       tokenomicsRef && tokenomicsRef.current
-      && tokenomicsRef.current.offsetTop - 10 <= scrollTop
+      && tokenomicsRef.current.offsetTop - heightUpperBlock <= scrollTop
     ) {
       setSelectedPath(Path.Tokenomics);
       return;
     }
     if (
       roadMapRef && roadMapRef.current
-      && roadMapRef.current?.offsetTop - 10 <= scrollTop
+      && roadMapRef.current?.offsetTop - heightUpperBlock <= scrollTop
     ) {
       setSelectedPath(Path.Roadmap);
       return;
@@ -72,10 +78,15 @@ const Main: React.FC<Props> = () => {
       return;
     }
 
-    element.scrollIntoView({
+    const root = document.querySelector('#root') as HTMLDivElement;
+
+    const heightUpperBlock = window.innerWidth >= vars.screen_width.laptop
+      ? componentsStyle.navigation.height.desktop
+      : componentsStyle.navigation.height.tablet;
+
+    root.scrollTo({
+      top: element.offsetTop - heightUpperBlock,
       behavior: 'smooth',
-      block: 'start',
-      inline: 'center',
     });
   };
 
