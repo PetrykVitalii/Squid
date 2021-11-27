@@ -1,11 +1,10 @@
 import React from 'react';
 
 const WhitepaperIcon: React.FC = () => (
-  <svg width="100%" height="100%" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg%22%3E">
-    <path d="M19.3884 2.5L10.2408 13.6687L6.48376 9.67057" stroke="white" strokeWidth="2.5" strokeMiterlimit="10" strokeLinecap="square" />
-    <path d="M6.11623 13.7122L2.31836 9.67056" stroke="white" strokeWidth="2.5" strokeMiterlimit="10" strokeLinecap="square" />
-    <path d="M15.2228 2.5L10.0365 8.84487" stroke="white" strokeWidth="2.5" strokeMiterlimit="10" strokeLinecap="square" />
+  <svg width="100%" height="100%" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg%22%3E">
+    <path d="M0.826173 1.25787C1.09621 0.939698 1.48061 0.776856 1.86809 0.776856C2.17978 0.776856 2.49419 0.883369 2.75126 1.10083L5.62574 3.54244L8.50023 1.10117C9.07478 0.61299 9.93679 0.682975 10.4253 1.25787C10.9135 1.83345 10.8432 2.69443 10.2683 3.1833L6.5096 6.37561C5.9999 6.80884 5.25124 6.80884 4.74189 6.37561L0.98287 3.1833C0.407973 2.69443 0.337989 1.83311 0.826173 1.25787Z" fill="#F8F8F8" fillOpacity="0.9" />
   </svg>
+
 );
 
 export default WhitepaperIcon;
