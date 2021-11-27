@@ -170,23 +170,26 @@ const Block = styled.div`
 const Text = styled.div<{ align?: 'center' | 'right' }>`
   text-align: ${({ align }) => align && align};
   font-size: 24px;
-  font-weight: 800;
   line-height: 36px;
 
   @media ${device.desktop} {
     font-size: 22px;
+    line-height: 32px;
   }
 
   @media ${device.laptop} {
     font-size: 20px;
+    line-height: 30px;
   }
 
   @media ${device.tablet} {
     font-size: 18px;
+    line-height: 28px;
   }
 
   @media ${device.mobile} {
     font-size: 16px;
+    line-height: 24px;
   }
 `;
 

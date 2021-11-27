@@ -72,6 +72,23 @@ const IconWrap = styled.div`
   justify-content: center;
   position: relative;
   z-index: 2;
+  padding: 0 150px;
+
+  @media ${device.desktop} {
+    padding: 0 100px;
+  }
+
+  @media ${device.laptop} {
+    padding: 0 75px;
+  }
+
+  @media ${device.tablet} {
+    padding: 0 50px;
+  }
+
+  @media ${device.mobile} {
+    padding: 0 0;
+  }
 `;
 
 const Title = styled.div`
