@@ -50,19 +50,19 @@ const Text = styled.div`
   color: ${Colors.White};
 
   @media ${device.desktop} {
-    font-size: 30px;
+    font-size: 24px;
   }
 
   @media ${device.laptop} {
-    font-size: 26px;
-  }
-
-  @media ${device.tablet} {
     font-size: 20px;
   }
 
-  @media ${device.mobile} {
+  @media ${device.tablet} {
     font-size: 16px;
+  }
+
+  @media ${device.mobile} {
+    font-size: 12px;
   }
 `;
 

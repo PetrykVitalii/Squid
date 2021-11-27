@@ -49,59 +49,59 @@ export const steps: ISteps[] = [
   {
     name: 'Step 2',
     id: 'Step2',
-    status: IStatusItem.Success,
+    status: IStatusItem.Process,
     td: [
       {
         name: 'Pre Sale',
         id: 'Pre Sale',
-        status: IStatusItem.Success,
+        status: IStatusItem.Process,
       },
       {
         name: '456 Holders',
         id: '456 Holders',
-        status: IStatusItem.Success,
+        status: IStatusItem.Process,
       },
       {
         name: 'Advanced marketing',
         id: 'Advanced marketing',
-        status: IStatusItem.Success,
+        status: IStatusItem.Process,
       },
       {
         name: 'Distribution of NFT holders awards',
         id: 'Distribution of NFT holders awards',
-        status: IStatusItem.Success,
+        status: IStatusItem.Process,
       },
     ],
   },
   {
     name: 'Step 3',
     id: 'Step3',
-    status: IStatusItem.Process,
+    status: IStatusItem.Pending,
     td: [
       {
         name: '4560 Holders',
         id: '4560 Holders',
-        status: IStatusItem.Process,
+        status: IStatusItem.Pending,
       },
       {
         name: 'List on pancakeswap',
         id: 'List on pancakeswap',
-        status: IStatusItem.Process,
+        status: IStatusItem.Pending,
       },
       {
         name: 'Push Influencer Marketing',
         id: 'Push Influencer Marketing',
-        status: IStatusItem.Process,
+        status: IStatusItem.Pending,
       },
       {
         name: 'Announcements and Promotions',
         id: 'Announcements and Promotions',
-        status: IStatusItem.Process,
+        status: IStatusItem.Pending,
       },
       {
         name: 'Spoiler 2 game maps',
         id: 'Spoiler 2 game maps',
-        status: IStatusItem.Process,
+        status: IStatusItem.Pending,
       },
     ],
   },
