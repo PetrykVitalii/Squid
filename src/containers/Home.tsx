@@ -60,7 +60,6 @@ const Title = styled.div`
   font-weight: 700;
   width: min-content;
   padding: 0 20px;
-  margin-left: 30px;
   margin-bottom: 2%;
 
   @media ${device.desktop} {

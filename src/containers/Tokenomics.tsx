@@ -72,14 +72,14 @@ const IconWrap = styled.div`
   justify-content: center;
   position: relative;
   z-index: 2;
-  padding: 0 150px;
+  padding: 0 200px;
 
   @media ${device.desktop} {
-    padding: 0 100px;
+    padding: 0 150px;
   }
 
   @media ${device.laptop} {
-    padding: 0 75px;
+    padding: 0 100px;
   }
 
   @media ${device.tablet} {
