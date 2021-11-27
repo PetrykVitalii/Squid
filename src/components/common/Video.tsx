@@ -10,6 +10,7 @@ const Video: React.FC<Props> = ({ url, ...props }) => (
     playing
     loop
     muted
+    playsinline
     url={url}
     width="100%"
     height="auto"

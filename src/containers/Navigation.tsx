@@ -6,11 +6,11 @@ import NavigationLink, { ButtonTheme, ILink } from '@/components/common/Navigati
 import LogoIcon from '@/components/icons/LogoIcon';
 
 import useToggle from '@/components/hooks/useToggle';
+import useOnClickOutside from '@/components/hooks/useOnClickOutside';
 import useScroll from '@/components/hooks/useScroll';
 
 import { Colors } from '@/utils/styles/colors';
 import { device } from '@/utils/styles/responsiveDesign';
-import useOnClickOutside from '@/components/hooks/useOnClickOutside';
 
 export enum Path {
   Home = 'home',
